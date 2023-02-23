@@ -1,14 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Analytics;
-using System;
 
-public class FirebaseAnalytics : MonoBehaviour
+public class FirebaseManager : MonoBehaviour
 {
+    public static FirebaseManager instance;
     private Firebase.FirebaseApp app;
- 
+    internal static object EventAppOpen;
 
+    private void Awake()
+    {
+        instance = this;
+    }
     //Start is called before the first frame update
     void Start()
     { 
@@ -32,18 +34,9 @@ public class FirebaseAnalytics : MonoBehaviour
         });
     }
 
-    internal static object EventLevelStart(Action p)
+    public void LogEvent(string name)
     {
-        throw new NotImplementedException();
-    }
-
-    internal static object EventLevelEnd(Action p)
-    {
-        throw new NotImplementedException();
-    }
-
-    internal static void LogEvents(object eventLevelStart)
-    {
-        throw new NotImplementedException();
+        Debug.Log(name +" Event is called");
+        FirebaseAnalytics.LogEvent(name);
     }
 }

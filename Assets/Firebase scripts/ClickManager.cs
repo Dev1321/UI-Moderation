@@ -25,17 +25,12 @@ public class ClickManager : MonoBehaviour
         HomeBottomPanelTrending.onClick.AddListener(() => Clicked("Trending"));
         HomeBottomPanelGallery.onClick.AddListener(() => Clicked("Gallery"));
         TopBarSetting.onClick.AddListener(() => { Clicked("Setting"); });
-
-        FirebaseAnalytics.LogEvents(FirebaseAnalytics.EventLevelStart(() => { Clicked("Camera"); }));
-    
     }
 
     private void Clicked(string name)
     {
-        Debug.Log(name + " button was clicked");    
+        Debug.Log(name + " button was clicked");
+        FirebaseManager.instance.LogEvent(name);
     }
-    public void OnDestroy()
-    {
-        FirebaseAnalytics.LogEvents(FirebaseAnalytics.EventLevelEnd(() => { Clicked("Camera"); }));
-    }
+  
 }
