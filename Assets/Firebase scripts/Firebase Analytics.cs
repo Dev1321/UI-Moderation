@@ -8,7 +8,7 @@ public class FirebaseAnalytics : MonoBehaviour
     private Firebase.FirebaseApp app;
     //Start is called before the first frame update
     void Start()
-    {
+    { 
         Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
         {
             var dependencyStatus = task.Result;

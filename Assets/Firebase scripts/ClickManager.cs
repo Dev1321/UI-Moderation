@@ -8,14 +8,24 @@ using System;
 
 public class ClickManager : MonoBehaviour
 {
-    public Button Camera;
+    [SerializeField]
+    private Button HomeBottomPanelCamera;
+    [SerializeField]
+    private Button HomeBottomPanelTrending;
+    [SerializeField]
+    private Button HomeBottomPanelGallery; 
+    [SerializeField]
+    private Button TopBarSetting; 
     // Start is called before the first frame update
     void Start()
     {
-        Camera.onClick.AddListener(Clicked); 
+        HomeBottomPanelCamera.onClick.AddListener(() => Clicked("Camera"));
+        HomeBottomPanelTrending.onClick.AddListener(() => Clicked("Trending"));
+        HomeBottomPanelGallery.onClick.AddListener(() => Clicked("Gallery"));
+        TopBarSetting.onClick.AddListener(() => Clicked("Setting"));
     }
 
-    private void Clicked()
+    private void Clicked(string name)
     {
         Debug.Log(name + " button was clicked");
     }
