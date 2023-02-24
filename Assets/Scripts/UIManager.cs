@@ -13,11 +13,17 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Button HomeBottomPanelGallery; 
     [SerializeField]
-    private Button TopBarSetting;
+    private Button HomeTopBarSetting;
     [SerializeField]
-    private Button Back;
+    private Button BackCamera;
+    [SerializeField]
+    private Button BackSetting;
     [SerializeField]
     private Button GalleryPanelHome;
+    [SerializeField]
+    private Button SettingLanguage;
+    [SerializeField]
+    private Button LanguageTopBarTick;
     //Panels
     [SerializeField]
     private GameObject CameraPanel;
@@ -25,39 +31,60 @@ public class UIManager : MonoBehaviour
     private GameObject HomePanel;
     [SerializeField]
     private GameObject GalleryPanel;
+    [SerializeField]
+    private GameObject SettingPanel;
+    [SerializeField]
+    private GameObject SettingLanguagePanel;
 
   
  
     void Start()
     {
+        HomePanel.SetActive(true);
         HomeBottomPanelCamera.onClick.AddListener(CameraPanelActive);   
         GalleryPanelHome.onClick.AddListener(HomePanelActive);
         HomeBottomPanelGallery.onClick.AddListener(GalleryPanelActive);
-        TopBarSetting.onClick.AddListener(CameraPanelActive);
-        Back.onClick.AddListener(BackButton);
+        HomeTopBarSetting.onClick.AddListener(SettingPanelActive);
+        BackCamera.onClick.AddListener(BackButton);
+        BackSetting.onClick.AddListener(BackButton);
+        SettingLanguage.onClick.AddListener(LanguagePanelActive);
+        LanguageTopBarTick.onClick.AddListener(HomePanelActive);
     }
+
     private void CameraPanelActive()
     {
         CameraPanel.SetActive(true);
         HomePanel.SetActive(false);
-        Debug.Log(name + " button was clicked");
+        Debug.Log("Camera button was clicked");
         FirebaseManager.instance.LogEvent(name);
     }  
     private void BackButton()
     {
         HomePanel.SetActive(true);
         CameraPanel.SetActive(false);
+        SettingPanel.SetActive(false);
         Debug.Log("Back Button was clicked");
     }
     private void HomePanelActive()
     {
         HomePanel.SetActive(true);
         GalleryPanel.SetActive(false);
+        SettingLanguagePanel.SetActive(false);
         Debug.Log("Gallery Home button was Clicked");
     }
     private void GalleryPanelActive()
     {
         GalleryPanel.SetActive(true);
         HomePanel.SetActive(false);
+    }
+    private void SettingPanelActive()
+    {
+        SettingPanel.SetActive(true);
+        HomePanel.SetActive(false);
+    }
+    private void LanguagePanelActive()
+    {
+        SettingLanguagePanel.SetActive(true);
+        SettingPanel.SetActive(false);
     }
 }
