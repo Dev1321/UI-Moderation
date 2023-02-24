@@ -16,19 +16,23 @@ public class UIManager : MonoBehaviour
     private Button TopBarSetting;
     [SerializeField]
     private Button Back;
+    [SerializeField]
+    private Button GalleryPanelHome;
     //Panels
     [SerializeField]
     private GameObject CameraPanel;
     [SerializeField]
     private GameObject HomePanel;
+    [SerializeField]
+    private GameObject GalleryPanel;
 
   
  
     void Start()
     {
         HomeBottomPanelCamera.onClick.AddListener(CameraPanelActive);   
-        HomeBottomPanelTrending.onClick.AddListener(CameraPanelActive);
-        HomeBottomPanelGallery.onClick.AddListener(CameraPanelActive);
+        GalleryPanelHome.onClick.AddListener(HomePanelActive);
+        HomeBottomPanelGallery.onClick.AddListener(GalleryPanelActive);
         TopBarSetting.onClick.AddListener(CameraPanelActive);
         Back.onClick.AddListener(BackButton);
     }
@@ -44,5 +48,16 @@ public class UIManager : MonoBehaviour
         HomePanel.SetActive(true);
         CameraPanel.SetActive(false);
         Debug.Log("Back Button was clicked");
+    }
+    private void HomePanelActive()
+    {
+        HomePanel.SetActive(true);
+        GalleryPanel.SetActive(false);
+        Debug.Log("Gallery Home button was Clicked");
+    }
+    private void GalleryPanelActive()
+    {
+        GalleryPanel.SetActive(true);
+        HomePanel.SetActive(false);
     }
 }
