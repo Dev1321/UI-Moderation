@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "807644478099",
+    "project_id": "ui-moderation",
+    "storage_bucket": "ui-moderation.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807644478099:android:2b077952b566acb6f4eb66",
+        "android_client_info": {
+          "package_name": "com.ModerationUI"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "807644478099-63k5ggpk10qdv0rihotsbfl3jbnnqcto.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY6IlUxsCd_bKAzwfV_RGoyqFMB7L6qKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "807644478099-63k5ggpk10qdv0rihotsbfl3jbnnqcto.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,8 +5,7 @@ public class FirebaseManager : MonoBehaviour
 {
     public static FirebaseManager instance;
     private Firebase.FirebaseApp app;
-    internal static object EventAppOpen;
-
+   
     private void Awake()
     {
         instance = this;
@@ -22,7 +21,6 @@ public class FirebaseManager : MonoBehaviour
                 // Create and hold a reference to your FirebaseApp,
                 // where app is a Firebase.FirebaseApp property of your application class.
                 app = Firebase.FirebaseApp.DefaultInstance;
-
                 // Set a flag here to indicate whether Firebase is ready to use by your app.
             }
             else

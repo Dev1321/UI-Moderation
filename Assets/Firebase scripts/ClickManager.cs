@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Firebase.Analytics;
 using System;
-
-
 
 public class ClickManager : MonoBehaviour
 {
@@ -18,7 +14,6 @@ public class ClickManager : MonoBehaviour
     [SerializeField]
     private Button TopBarSetting;
  
-    // Start is called before the first frame update
     void Start()
     {
         HomeBottomPanelCamera.onClick.AddListener(() => Clicked("Camera"));
@@ -31,6 +26,5 @@ public class ClickManager : MonoBehaviour
     {
         Debug.Log(name + " button was clicked");
         FirebaseManager.instance.LogEvent(name);
-    }
-  
+    }  
 }
