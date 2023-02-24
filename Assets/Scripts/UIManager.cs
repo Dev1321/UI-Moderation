@@ -17,6 +17,10 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Button BackCamera;
     [SerializeField]
+    private Button CameraPro;
+    [SerializeField]
+    private Button ProExit;
+    [SerializeField]
     private Button BackSetting;
     [SerializeField]
     private Button GalleryPanelHome;
@@ -35,6 +39,8 @@ public class UIManager : MonoBehaviour
     private GameObject SettingPanel;
     [SerializeField]
     private GameObject SettingLanguagePanel;
+    [SerializeField]
+    private GameObject CameraProPanel;
 
   
  
@@ -49,15 +55,26 @@ public class UIManager : MonoBehaviour
         BackSetting.onClick.AddListener(BackButton);
         SettingLanguage.onClick.AddListener(LanguagePanelActive);
         LanguageTopBarTick.onClick.AddListener(HomePanelActive);
+        CameraPro.onClick.AddListener(CameraProPanelActive);
+        ProExit.onClick.AddListener(CameraPanelActive);
     }
 
     private void CameraPanelActive()
     {
         CameraPanel.SetActive(true);
         HomePanel.SetActive(false);
+        CameraProPanel.SetActive(false);
         Debug.Log("Camera button was clicked");
+        
         FirebaseManager.instance.LogEvent(name);
     }  
+    private void CameraProPanelActive()
+    {
+        CameraProPanel.SetActive(true);
+        CameraPanel.SetActive(false);
+    }
+   
+  
     private void BackButton()
     {
         HomePanel.SetActive(true);
