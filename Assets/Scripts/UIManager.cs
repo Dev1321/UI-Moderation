@@ -11,23 +11,25 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Button HomeBottomPanelTrending;
     [SerializeField]
-    private Button HomeBottomPanelGallery; 
+    private Button HomeBottomPanelToGallery; 
     [SerializeField]
-    private Button HomeTopBarSetting;
+    private Button HomeTopBarToSetting;
     [SerializeField]
-    private Button BackCamera;
+    private Button BackFromCameraToHome;
     [SerializeField]
-    private Button CameraPro;
+    private Button CameraToCameraPro;
     [SerializeField]
-    private Button ProExit;
+    private Button CameraProExit;
     [SerializeField]
-    private Button BackSetting;
+    private Button BackFromSettingToHome;
     [SerializeField]
-    private Button GalleryPanelHome;
+    private Button GalleryPanelToHome;
     [SerializeField]
-    private Button SettingLanguage;
+    private Button GalleryPanelToSetting;
     [SerializeField]
-    private Button LanguageTopBarTick;
+    private Button SettingToLanguage;
+    [SerializeField]
+    private Button LanguageTickToHome;
     //Panels
     [SerializeField]
     private GameObject CameraPanel, HomePanel, GalleryPanel, SettingPanel, SettingLanguagePanel, CameraProPanel;
@@ -37,15 +39,16 @@ public class UIManager : MonoBehaviour
     {
         HomePanel.SetActive(true);
         HomePanelToCameraPanel.onClick.AddListener(() => SwitchPanel(HomePanel, CameraPanel));   
-        GalleryPanelHome.onClick.AddListener(() => SwitchPanel(GalleryPanel, HomePanel));
-        HomeBottomPanelGallery.onClick.AddListener(() => SwitchPanel(HomePanel, GalleryPanel));
-        HomeTopBarSetting.onClick.AddListener(() => SwitchPanel(HomePanel, SettingPanel));
-        BackCamera.onClick.AddListener(() => SwitchPanel(CameraPanel, HomePanel));
-        BackSetting.onClick.AddListener(() => SwitchPanel(SettingPanel, HomePanel));
-        SettingLanguage.onClick.AddListener(() => SwitchPanel(SettingPanel, SettingLanguagePanel));
-        LanguageTopBarTick.onClick.AddListener(() => SwitchPanel(SettingLanguagePanel, HomePanel));
-        CameraPro.onClick.AddListener(() => SwitchPanel(CameraPanel, CameraProPanel));
-        ProExit.onClick.AddListener(() => SwitchPanel(CameraProPanel, CameraPanel));
+        GalleryPanelToHome.onClick.AddListener(() => SwitchPanel(GalleryPanel, HomePanel));
+        GalleryPanelToSetting.onClick.AddListener(() => SwitchPanel(GalleryPanel, SettingPanel));
+        HomeBottomPanelToGallery.onClick.AddListener(() => SwitchPanel(HomePanel, GalleryPanel));
+        HomeTopBarToSetting.onClick.AddListener(() => SwitchPanel(HomePanel, SettingPanel));
+        BackFromCameraToHome.onClick.AddListener(() => SwitchPanel(CameraPanel, HomePanel));
+        BackFromSettingToHome.onClick.AddListener(() => SwitchPanel(SettingPanel, HomePanel));
+        SettingToLanguage.onClick.AddListener(() => SwitchPanel(SettingPanel, SettingLanguagePanel));
+        LanguageTickToHome.onClick.AddListener(() => SwitchPanel(SettingLanguagePanel, HomePanel));
+        CameraToCameraPro.onClick.AddListener(() => SwitchPanel(CameraPanel, CameraProPanel));
+        CameraProExit.onClick.AddListener(() => SwitchPanel(CameraProPanel, CameraPanel));
     }
 
     //private void CameraPanelActive()
