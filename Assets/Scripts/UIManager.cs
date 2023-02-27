@@ -27,6 +27,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Button GalleryPanelToSetting;
     [SerializeField]
+    private Button GalleryPanelToCamera;
+    [SerializeField]
     private Button SettingToLanguage;
     [SerializeField]
     private Button LanguageTickToHome;
@@ -41,6 +43,7 @@ public class UIManager : MonoBehaviour
         HomePanelToCameraPanel.onClick.AddListener(() => SwitchPanel(HomePanel, CameraPanel));   
         GalleryPanelToHome.onClick.AddListener(() => SwitchPanel(GalleryPanel, HomePanel));
         GalleryPanelToSetting.onClick.AddListener(() => SwitchPanel(GalleryPanel, SettingPanel));
+        GalleryPanelToCamera.onClick.AddListener(() => SwitchPanel(GalleryPanel, CameraPanel));
         HomeBottomPanelToGallery.onClick.AddListener(() => SwitchPanel(HomePanel, GalleryPanel));
         HomeTopBarToSetting.onClick.AddListener(() => SwitchPanel(HomePanel, SettingPanel));
         BackFromCameraToHome.onClick.AddListener(() => SwitchPanel(CameraPanel, HomePanel));
