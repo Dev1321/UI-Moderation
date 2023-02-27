@@ -96,11 +96,12 @@ public class UIManager : MonoBehaviour
     //    SettingPanel.SetActive(false);
     //}
 
-    private  void SwitchPanel(GameObject deactivate, GameObject activate)
+    private  void SwitchPanel(GameObject currentPanelToDeactivate, GameObject newPanelToActivate)
     {
-        var currentPanel = deactivate;
+        GameObject currentPanel;
+        currentPanel = currentPanelToDeactivate;
         currentPanel.SetActive(false);
-        var newPanel = activate;
+        var newPanel = newPanelToActivate;
         newPanel.SetActive(true);
     }
 }
