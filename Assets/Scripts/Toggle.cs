@@ -3,26 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Toggle : MonoBehaviour
+
+public class ToggleManager : MonoBehaviour
 {
-    public Image Checkmark;
-    int index;
-    // Start is called before the first frame update
-    void Start()
-    {
+    public Toggle Checkmark;
+   
+   
 
+    private void Update()
+    {
+        ActiveToggle();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void ActiveToggle()
     {
-        if(index==1)
+        if(Checkmark.enabled)
         {
-            Checkmark.gameObject.SetActive(false);
-        }
-        if(index==0)
-        {
-            Checkmark.gameObject.SetActive(true);
+            Debug.Log("English language is selected");
         }
     }
+   
+  
 }
